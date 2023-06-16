@@ -1,3 +1,28 @@
+<?php 
+
+  // membuat variabel dengan data array
+  $peserta = array(
+                    'Alpais', 
+                    'Rebly', 
+                    'Alpenus', 
+                    'Efati', 
+                    'Sulenias',
+                    'Samuel',
+                    'Septemina',
+                    'Allyakim',
+                    'Belinda',
+                  );
+
+  // menampilkan struktur data menggunakan var_dump
+  
+  // var_dump($peserta);
+
+  // foreach($peserta as $detailPeserta) {
+  //   echo '<div class="border shadow m-2 p-2">' . $detailPeserta . '</div>';
+  // }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,32 +42,29 @@
 
     <div class="row my-5">
 
-    <div class="card">
+      <div class="card">
 
-      <div class="card-body py-5">
-        
-        <?php
+        <div class="card-body py-5">
 
-          // membuat menu dalam array
-          $menus = [
-            'beranda' => 'Beranda',
-            'tentang-sekolah' => 'Tentang Sekolah',
-            'galeri-kegiatan' => 'Galeri Kegiatan',
-            'para-guru' => 'Para Guru',
-          ];
+          <ul class="list-group">
 
-          // menampilkan data dengan foreach
-          foreach ($menus as $menu => $menuLabel) :
-            echo '
-              <ul class="list-group">
-                <li class="list-group-item"> ' . $menu . ' - ' . $menuLabel . ' </li>
-              </ul>
-            ';
-          endforeach;
+            <?php 
+              foreach($peserta as $detailPeserta):
+            ?>
 
-        ?>
+            <li class="list-group-item">
+              <a href="#">
+                <?php echo $detailPeserta; ?>
+              </a>
+            </li>
 
-      </div>
+            <?php 
+              endforeach;
+            ?>
+
+          </ul>
+
+        </div>
 
       </div>
 

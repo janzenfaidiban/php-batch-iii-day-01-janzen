@@ -1,3 +1,48 @@
+<?php 
+
+    // membuat variabel dengan data array
+    $dataPeserta = [
+        [
+            'id'            => '1',
+            'nama_lengkap'  => 'Billy Rumbiak',
+            'alamat_email'  => 'b.rumbiak@sacode.web.id',
+            'nomor_hp'      => '082112345678',
+        ],
+        [
+            'id'            => '2',
+            'nama_lengkap'  => 'Septemina Waisimon',
+            'alamat_email'  => 'septemina.w@sacode.web.id',
+            'nomor_hp'      => '082112345678',
+        ],
+        [
+            'id'            => '3',
+            'nama_lengkap'  => 'Samuel Bosawer',
+            'alamat_email'  => 's.bos@sacode.web.id',
+            'nomor_hp'      => '082112345678',
+        ],
+        [
+            'id'            => '4',
+            'nama_lengkap'  => 'Sultan Masari',
+            'alamat_email'  => 's.m@sacode.web.id',
+            'nomor_hp'      => '082112345678',
+        ],
+    ];
+
+    // menampilkan struktur data dengan fungsi var_dump
+    // var_dump($dataPeserta);
+
+    // foreach($dataPeserta as $detailPeserta => $peserta) {
+        
+    //     echo $peserta['nama_lengkap'];
+    //     echo '<br>';
+
+    //     echo $peserta['alamat_email'];
+    //     echo '<br>';
+
+    // }
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -57,30 +102,18 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                
+                                <?php foreach($dataPeserta as $data => $peserta): ?>
+
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>Billy Rumbiak</td>
-                                    <td>b.rumbiak@outlook.com</td>
-                                    <td>123423453456</td>
+                                    <th scope="row"><?php echo $peserta['id']; ?></th>
+                                    <td><?php echo $peserta['nama_lengkap']; ?></td>
+                                    <td><?php echo $peserta['alamat_email']; ?></td>
+                                    <td><?php echo $peserta['nomor_hp']; ?></td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Septemina Waisimon</td>
-                                    <td>s.waisimon@outlook.com</td>
-                                    <td>123423453456</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Sultan Masari</td>
-                                    <td>s.masari@outlook.com</td>
-                                    <td>123423453456</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>Samuel Bosawer</td>
-                                    <td>s.bosawer@outlook.com</td>
-                                    <td>123423453456</td>
-                                </tr>
+
+                                <?php endforeach; ?>
+                                
                             </tbody>
                         </table>
 
